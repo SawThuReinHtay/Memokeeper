@@ -2,7 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI(
     title="Memokeeper API",
-    description="Backend API for the Memokeeper application",
+    description="Backend API for the Memokeeper hardware",
     version="0.1.0",
 )
 
@@ -18,4 +18,11 @@ def root():
 def health_check():
     return {
         "status": "healthy"
+    }
+
+
+@app.get("/strh")
+def authorname():
+    return{
+        "Author": "Saw Thu Rein Htay"
     }
